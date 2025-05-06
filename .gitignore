@@ -1,0 +1,36 @@
+# Python Bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual Environment
+venv/
+env/
+zoom-hand-gesture/
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.iml
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Log files
+*.log
+
+# Dependency directories
+.env/
+*.egg-info/
+dist/
+build/
+*.tgz
+
+# Image assets folder (optional, if you don't want to track it)
+assets/
