@@ -1,107 +1,93 @@
-### 📄 `README.md`
+# Zoom Hand Gesture
 
-```markdown
-# 🖼️ Zoom Any Picture Using Hand Gestures
+This project allows users to zoom in and out of an image using real-time hand gestures. The implementation uses Python, OpenCV, and MediaPipe for hand tracking and zoom functionality.
 
-This Python OpenCV project allows users to zoom in and out of a static image using **real-time hand gestures** via webcam. It uses **MediaPipe** for hand tracking and dynamically adjusts zoom based on the distance between the thumb and index finger.
+## Features
+- **Hand Gesture Tracking**: Real-time hand tracking using MediaPipe or equivalent.
+- **Zoom In/Out Functionality**: Zooms based on the distance between thumb and index finger.
+- **Smooth Zoom Scaling**: Ensures zooming without pixelation or distortion.
+- **Visual Feedback**: Shows distance between thumb and index finger and zoom scale.
 
----
-
-## 📌 Features
-
-- ✅ Real-time hand tracking using MediaPipe
-- 🔍 Dynamic zoom based on finger distance
-- 🎯 Smooth zoom scaling without pixelation
-- 🖥️ Live webcam feed + zoomed image window
-- 📏 Visual feedback for scale and distance
-
----
-
-## 📁 Project Structure
+## Folder Structure
 
 ```
 
 zoom-hand-gesture/
-│
-├── main.py                  # Main driver script
-├── hand\_tracker.py          # Handles hand detection using MediaPipe
-├── utils.py                 # Utility functions (distance, zoom logic)
-├── zoom\_logic.py            # Zoom scale controller
 ├── assets/
-│   └── image.jpg            # Image to zoom (you can change this)
-├── requirements.txt         # Installed packages list
-└── README.md                # This file
+│   └── image.jpg          # Image used for zooming
+├── hand\_tracker.py        # Hand tracking module using MediaPipe
+├── main.py                # Main script to run the program
+├── README.md              # Project documentation
+├── requirements.txt       # List of dependencies
+├── utils.py               # Utility functions like distance calculation and zooming
+└── zoom\_logic.py          # Logic to handle zoom in and out
 
-````
+```
 
----
+## Requirements
 
-## 🛠️ Setup Instructions
+To run this project, you need to install the following dependencies:
 
-### 1. 📦 Create Conda Environment
+- Python 3.x (preferably 3.8 or above)
+- OpenCV
+- MediaPipe
+- Numpy
 
-```bash
-conda create -n zoom-hand-gesture python=3.10
-conda activate zoom-hand-gesture
-````
+You can install the necessary packages using `pip`:
 
-### 2. 🧰 Install Dependencies
+```
 
-```bash
+pip install -r requirements.txt
+
+```
+
+Alternatively, install dependencies manually:
+
+```
+
 pip install opencv-python mediapipe numpy
+
 ```
 
-> Make sure you are using **Python 3.10 or 3.11**. MediaPipe does not yet support Python 3.13+.
+## How to Use
 
-### 3. ▶️ Run the App
+1. Clone the repository or download the project files.
+2. Install the required dependencies listed above.
+3. Place your desired image in the `assets/` folder and name it `image.jpg`.
+4. Run the main program:
 
-```bash
+```
+
 python main.py
+
 ```
 
-Press `Q` to exit the app.
+5. Open your webcam, and the program will track your hand gestures to zoom in and out of the image.
 
----
+## Explanation of Files
 
-## ✋ Hand Gesture Controls
+- **`main.py`**: The main script where the webcam feed is processed and zoom functionality is applied.
+- **`hand_tracker.py`**: Contains the `HandTracker` class, which uses MediaPipe to track hand landmarks in real-time.
+- **`zoom_logic.py`**: Contains the `ZoomController` class, which calculates zoom scale based on the distance between thumb and index finger.
+- **`utils.py`**: Contains utility functions such as calculating the distance between fingers and zooming the image.
+- **`assets/`**: A folder where the image to be zoomed (image.jpg) is stored.
 
-* 👌 **Zoom In/Out**: Move thumb and index finger apart or closer.
-* 📐 Distance is used to scale the image dynamically.
-* 🖼️ The zoomed image stays center-aligned and resizes smoothly.
+## License
 
----
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
 
-## 📷 Requirements
+### Instructions to create the `README.md`:
 
-* Webcam (built-in or external)
-* Compatible OS (Windows/macOS/Linux)
-* Python 3.10+
+1. Create a file named `README.md` in the root directory of your project.
+2. Copy and paste the above content into the file.
 
----
+### Additional Information
 
-## 💡 Future Improvements
+* If you have a `requirements.txt` file, you can include the following dependencies:
 
-* Add GUI with zoom slider
-* Save zoomed images
-* Support for gesture-based panning
-
----
-
-## 📸 Demo
-
-> *(Add screenshots or demo GIFs here)*
-
----
-
-## 🧑‍💻 Author
-
-**Sanket Nitin Shinde**
-Zoom Hand Gesture Vision Project — 2025
-
----
-
-## 📝 License
-
-This project is open source and free to use under the [MIT License](LICENSE).
-
+```
+opencv-python
+mediapipe
+numpy
 ```
